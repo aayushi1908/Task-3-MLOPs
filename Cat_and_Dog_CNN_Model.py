@@ -1,8 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-
-# In[1]:
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import sys
@@ -12,39 +8,21 @@ sys.stderr = open(os.devnull, 'w')
 from keras.layers import Convolution2D
 
 
-# In[2]:
-
-
 from keras.layers import MaxPooling2D
-
-
-# In[3]:
 
 
 from keras.layers import Flatten
 
 
-# In[4]:
-
-
 from keras.layers import Dense
-
-
-# In[5]:
 
 
 from keras.models import Sequential
 
 sys.stderr = stderr
-# 
-
-# In[6]:
 
 
 model = Sequential()
-
-
-# In[7]:
 
 
 model.add(Convolution2D( filters = 32,
@@ -53,45 +31,24 @@ model.add(Convolution2D( filters = 32,
                        input_shape=(64,64,3)))
 
 
-# 
-
-# In[8]:
-
 
 model.add(MaxPooling2D(pool_size=(2,2)))
-
-
-# In[9]:
 
 
 model.add(Flatten())
 
 
-# In[10]:
-
-
 model.add(Dense(units =128, activation = 'relu'))
-
-
-# In[11]:
 
 
 model.add(Dense(units=1, activation = 'sigmoid'))
 
 
-# In[12]:
-
-
 model.compile(optimizer='adam', loss = 'binary_crossentropy', metrics=['accuracy'])
-
-
-# In[13]:
 
 
 from keras_preprocessing.image import ImageDataGenerator
 
-
-# In[14]:
 
 save = sys.stdout
 sys.stdout = open("output.txt", "w+")
@@ -125,19 +82,14 @@ history = model.fit(
         )
 
 
-# In[22]:
 
 
 print ("Accuracy of the trained model is : {} %".format ( 100 * history.history['val_accuracy'][-1])) 
 
 
-# In[19]:
-
-
 model.save('dog and cat model.h5')
 
 
-# In[ ]:
 
 
 
