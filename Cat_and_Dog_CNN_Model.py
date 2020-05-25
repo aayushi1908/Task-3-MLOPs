@@ -83,7 +83,6 @@ history = model.fit(
 
 
 
-
 print ("Accuracy of the trained model is : {} %".format ( 100 * history.history['val_accuracy'][-1])) 
 
 
