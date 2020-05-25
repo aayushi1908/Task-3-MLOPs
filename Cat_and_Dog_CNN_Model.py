@@ -59,12 +59,12 @@ train_datagen = ImageDataGenerator(
         horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
 training_set = train_datagen.flow_from_directory(
-        'C:\\Users\\DeLL\\Desktop\\Cat and dog dataset DL\\training_set',
+        'Cat and dog dataset DL/training_set/',
         target_size=(64, 64),
         batch_size=32,
         class_mode='binary')
 test_set = test_datagen.flow_from_directory(
-        'C:\\Users\\DeLL\\Desktop\\Cat and dog dataset DL\\test_set',
+        'Cat and dog dataset DL/test_set/',
         target_size=(64, 64),
         batch_size=32,
         class_mode='binary')
