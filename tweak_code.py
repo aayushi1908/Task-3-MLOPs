@@ -180,7 +180,7 @@ f,k,p,d,l,c,i,dl=0,0,0,0,0,0,1,0
 print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 print("\nModification 1")
 print("No. of Convolutional Layers : {}".format(layer_arr[l])) 
-print("No. of Pooling Layers {}".format(1))
+print("No. of Pooling Layers : {}".format(1))
 print("No. of Dense Layers : {}".format(dense_layer_arr[dl]))
 print("No. of Filters : {}".format(filter_arr[f]))
 print("Kernel size : {}".format(kernal_arr[k]))
@@ -236,10 +236,10 @@ while accuracy[-1] < 0.95 or c < 6 :
     
     if c>4 :
         print("No. of Convolutional Layers : {}".format(2*layer_arr[l]))
-        print("No. of Pooling Layers{}".format(2*1))
+        print("No. of Pooling Layers : {}".format(2*1))
     else :
         print("No. of Convolutional Layers : {}".format(layer_arr[l]))
-        print("No. of Pooling Layers{}".format(1))
+        print("No. of Pooling Layers : {}".format(1))
     print("No. of Dense Layers : {}".format(dense_layer_arr[dl]))
     print("No. of Filters : {}".format(filter_arr[f]))
     print("Kernel size : {}".format(kernal_arr[k]))
@@ -270,7 +270,7 @@ print("\n\n\n\nMaximum accuracy achieved is : {}%".format(100*accuracy[index]))
 print("\n\nHyper-Parameters of the Best-model are : ")
 print("No. of Convolutional Layers : {}".format(layer_arr[hyper_parameter[index][4]]))
 if (layer_arr[hyper_parameter[index][4]])>3 :
-    print("No. of Pooling Layers       : {}".format(2*1))
+    print("No. of Pooling Layers : {}".format(2*1))
 else :
     print("No. of Pooling Layers : {}".format(1))
 print("No. of dense layer : {}".format(dense_layer_arr[hyper_parameter[index][5]]))
