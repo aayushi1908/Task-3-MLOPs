@@ -205,7 +205,7 @@ while accuracy[-1] < 0.95 or c < 6 :
     for z in range(dense_layer_arr[dl]):
         if (d-z) >= 0:
             dense(dense_arr[d-z])
-    output(4)
+    output(1)
     #print(model.summary())
     compiler(0.001)
     train()
