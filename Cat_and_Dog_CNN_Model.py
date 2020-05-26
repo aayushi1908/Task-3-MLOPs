@@ -62,6 +62,12 @@ history = model.fit(
         verbose=0
         )
 
+save = sys.stdout
+sys.stdout = open("accuracy.txt", "w+")
+print(100 * history.history['val_accuracy'][-1])
+sys.stdout.close()
+sys.stdout = save
+
 print ("Accuracy of the trained model is : {} %".format ( 100 * history.history['val_accuracy'][-1])) 
 
 model.save('dog and cat model.h5')
