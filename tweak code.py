@@ -38,11 +38,11 @@ def compiler(x):
     model.compile(optimizer=Adam(learning_rate=x),loss='binary_crossentropy', metrics=['accuracy'])
     
 def train():  
-    train_data_dir = 'Cat and dog dataset DL/training_set/'
-    validation_data_dir = 'Cat and dog dataset DL/test_set/'
+    train_data_dir = '/root/Cat and dog dataset DL/training_set/'
+    validation_data_dir = '/root/Cat and dog dataset DL/test_set/'
 
     save =sys.stdout
-    sys.stdout = open("output.txt","w+")
+    sys.stdout = open("/root/output.txt","w+")
     train_datagen = ImageDataGenerator(
           rescale=1./255,
           rotation_range=20,
@@ -59,7 +59,7 @@ def train():
           horizontal_flip=True,
           fill_mode='nearest')
 
-    # Change the batchsize according to your system RAM
+    # Change batchsize according to your RAM
     train_batchsize = 16
     val_batchsize = 10
 
@@ -81,7 +81,7 @@ def train():
     sys.stdout.close()
     sys.stdout = save
     
-    checkpoint = ModelCheckpoint("mymodel.h5",
+    checkpoint = ModelCheckpoint("/root/tweak.h5",
                                  monitor="val_accuracy",
                                  mode="max",
                                  save_best_only = True,
@@ -112,7 +112,7 @@ def train():
         steps_per_epoch=100,
         callbacks = callbacks,
         validation_data = validation_generator,
-        validation_steps=10,
+        validation_steps=20,
         verbose=0)
 
 def tweaker():
