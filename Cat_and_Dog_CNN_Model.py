@@ -32,7 +32,7 @@ model.compile(optimizer='adam', loss = 'binary_crossentropy', metrics=['accuracy
 from keras_preprocessing.image import ImageDataGenerator
 
 save = sys.stdout
-sys.stdout = open("output.txt", "w+")
+sys.stdout = open("/root/output.txt", "w+")
 train_datagen = ImageDataGenerator(
         rescale=1./255,
         shear_range=0.2,
@@ -63,14 +63,14 @@ history = model.fit(
         )
 
 save = sys.stdout
-sys.stdout = open("accuracy.txt", "w+")
+sys.stdout = open("/root/accuracy.txt", "w+")
 print(100 * history.history['val_accuracy'][-1])
 sys.stdout.close()
 sys.stdout = save
 
 print ("Accuracy of the trained model is : {} %".format ( 100 * history.history['val_accuracy'][-1])) 
 
-model.save('dog and cat model.h5')
+model.save('/root/dog and cat model.h5')
 
 
 
