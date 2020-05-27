@@ -103,7 +103,7 @@ def train():
 
     nb_train_samples = 1000
     nb_validation_samples = 100
-    epochs = 10
+    epochs = 15
     batch_size = 10
 
     history = model.fit_generator(
