@@ -60,7 +60,7 @@ def train():
           fill_mode='nearest')
 
     # Change batchsize according to your RAM
-    train_batchsize = 16
+    train_batchsize = 10
     val_batchsize = 10
 
     global history
@@ -103,7 +103,7 @@ def train():
 
     nb_train_samples = 1000
     nb_validation_samples = 100
-    epochs = 15
+    epochs = 20
     batch_size = 10
 
     history = model.fit_generator(
