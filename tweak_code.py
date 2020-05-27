@@ -109,10 +109,8 @@ def train():
     history = model.fit_generator(
         train_generator,
         epochs = epochs,
-        steps_per_epoch=100,
         callbacks = callbacks,
         validation_data = validation_generator,
-        validation_steps=20,
         verbose=0)
 
 def tweaker():
