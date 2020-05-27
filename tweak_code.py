@@ -103,14 +103,16 @@ def train():
 
     nb_train_samples = 1000
     nb_validation_samples = 100
-    epochs = 20
+    epochs = 10
     batch_size = 10
 
     history = model.fit_generator(
         train_generator,
         epochs = epochs,
+        steps_per_epoch=100,
         callbacks = callbacks,
         validation_data = validation_generator,
+        validation_steps=20,
         verbose=0)
 
 def tweaker():
